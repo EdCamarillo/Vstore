@@ -49,8 +49,8 @@ public class CatalogAdapter extends RecyclerView.Adapter<CatalogAdapter.ViewHold
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             imageView = itemView.findViewById(R.id.imageView);
-            textViewName = itemView.findViewById(R.id.textViewName);
-            textViewPrice = itemView.findViewById(R.id.textViewPrice);
+            textViewName = itemView.findViewById(R.id.nameTextView);
+            textViewPrice = itemView.findViewById(R.id.priceTextView);
         }
     }
 }
