@@ -3,10 +3,19 @@ package com.coverdev.vstore;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.coverdev.vstore.Adapters.CatalogAdapter;
+import com.coverdev.vstore.Models.Item;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -23,6 +32,9 @@ public class CatalogFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private RecyclerView recyclerView;
+    private CatalogAdapter adapter;
+    private List<Item> itemList;
 
     public CatalogFragment() {
         // Required empty public constructor
@@ -49,16 +61,28 @@ public class CatalogFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+        // Initialize list of items
+        itemList = new ArrayList<>();
+        itemList.add(new Item(R.drawable.item_botannendo, "Shishiro Botan Nendoroid", "$10"));
+        itemList.add(new Item(R.drawable.item_suiseiplushie, "Hoshimachi Suisei Plushie", "$15"));
+        itemList.add(new Item(R.drawable.item_mikonendo, "Sakura Miko Nendoroid", "$15"));
+        // Add more items as needed
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_catalog, container, false);
+        View view = inflater.inflate(R.layout.fragment_catalog, container, false);
+        recyclerView = view.findViewById(R.id.recyclerView);
+
+        // Set up RecyclerView with GridLayoutManager
+        GridLayoutManager layoutManager = new GridLayoutManager(getContext(), 2); // 2 columns
+        recyclerView.setLayoutManager(layoutManager);
+
+        // Set up adapter
+        adapter = new CatalogAdapter(itemList);
+        recyclerView.setAdapter(adapter);
+
+        return view;
     }
 }
