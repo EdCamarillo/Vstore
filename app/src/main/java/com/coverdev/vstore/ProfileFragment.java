@@ -33,6 +33,7 @@ public class ProfileFragment extends Fragment {
         addItemToWishlist("Sakura Miko Nendoroid", "$15", R.drawable.item_mikonendo);
 
         addItemToCollection("Hoshimachi Suisei Plushie", R.drawable.item_suiseiplushie);
+        addItemToCollection("Shishiro Botan POP UP PARADE", R.drawable.item_botanpopup);
 
         return view;
     }

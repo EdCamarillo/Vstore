@@ -139,6 +139,12 @@ public class CatalogFragment extends Fragment {
         itemList.add(new Item(R.drawable.item_botannendo, "Shishiro Botan Nendoroid", "$10"));
         itemList.add(new Item(R.drawable.item_suiseiplushie, "Hoshimachi Suisei Plushie", "$15"));
         itemList.add(new Item(R.drawable.item_mikonendo, "Sakura Miko Nendoroid", "$15"));
+        itemList.add(new Item(R.drawable.item_lamynendo, "Yukihana Lamy Nendoroid", "$15"));
+        itemList.add(new Item(R.drawable.item_botanpopup, "Shishiro Botan POP UP PARADE", "$15"));
+        itemList.add(new Item(R.drawable.item_noelpopup, "Shirogane Noel POP UP PARADE", "$15"));
+        itemList.add(new Item(R.drawable.item_pekoranendo, "Usada Pekora Nendoroid", "$15"));
+        itemList.add(new Item(R.drawable.item_marinepopup, "Houshou Marine POP UP PARADE", "$15"));
+        itemList.add(new Item(R.drawable.item_callipopup, "Mori Calliope POP UP PARADE", "$20"));
         // Add more items as needed
 
         // Initialize filtered list with all items
